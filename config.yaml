@@ -6,7 +6,7 @@ tls:
 
 auth:
   type: password
-  password: ВАШ_НАДЕЖНЫЙ_ПАРОЛЬ
+  password: 123@@@321
 
 masquerade:
   type: proxy
