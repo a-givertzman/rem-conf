@@ -10,9 +10,11 @@ mkdir -p /etc/hysteria
 apt update && apt install -y curl openssl
 
 # 3. Генерация сертификатов во временную папку (Алгоритм EC Elliptic Curve — быстро и без ошибок)
-openssl req -x509 -nodes -days 3650 -newkey ec -pkeyopt ec_paramgen_curve:P-256 \
-  -keyout /tmp/server.key -out /tmp/server.crt \
-  -subj "/CN=://microsoft.com" -batch
+openssl req -x509 -newkey rsa:2048 -nodes -keyout /etc/hysteria/server.key -out /etc/hysteria/server.crt -days 3650 -batch
+
+# openssl req -x509 -nodes -days 3650 -newkey ec -pkeyopt ec_paramgen_curve:P-256 \
+#   -keyout /tmp/server.key -out /tmp/server.crt \
+#   -subj "/CN=://microsoft.com" -batch
 
 # Перенос готовых файлов в целевую папку
 mv /tmp/server.key /etc/hysteria/server.key
