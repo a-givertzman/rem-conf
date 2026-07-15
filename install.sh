@@ -10,7 +10,7 @@ mkdir -p /etc/hysteria
 openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/hysteria/server.key -out /etc/hysteria/server.crt -days 3650 -subj "/CN=://microsoft.com"
 
 # 3. Скачивание конфига с вашего GitHub
-curl -o /etc/hysteria/config.yaml https://github.com/a-givertzman/rem-conf/blob/6a4d020ef85a6a798c9a049a0c3eae39b431f8ae/config.yaml
+curl -o /etc/hysteria/config.yaml https://raw.githubusercontent.com/a-givertzman/rem-conf/refs/heads/master/config.yaml
 
 # 4. Настройка автозапуска и старт сервиса
 systemctl enable hysteria-server.service
