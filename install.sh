@@ -9,6 +9,11 @@ bash <(curl -fsSL https://hy2.io)
 mkdir -p /etc/hysteria
 openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/hysteria/server.key -out /etc/hysteria/server.crt -days 3650 -subj "/CN=://microsoft.com"
 
+# Исправление прав для Debian 12 (чтобы служба Hysteria могла прочесть ключи)
+chown -R hysteria:hysteria /etc/hysteria
+chmod 644 /etc/hysteria/server.crt
+chmod 600 /etc/hysteria/server.key
+
 # 3. Скачивание конфига с вашего GitHub
 curl -o /etc/hysteria/config.yaml https://raw.githubusercontent.com/a-givertzman/rem-conf/refs/heads/master/config.yaml
 
