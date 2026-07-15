@@ -3,7 +3,7 @@ GITHUB_USER="a-givertzman"
 
 # 1. Установка утилит и официального бинарника Hysteria
 apt update && apt install -y curl openssl
-bash <(curl -fsSL https://hy2.io)
+bash <(curl -fsSL https://get.hy2.sh/)
 
 # 2. Создание директорий и генерация самоподписанного SSL-сертификата
 mkdir -p /etc/hysteria
