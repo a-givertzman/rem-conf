@@ -6,7 +6,7 @@ tls:
 
 auth:
   type: password
-  password: 123@@@321
+  password: 1212@@1212@@
 
 masquerade:
   type: proxy
